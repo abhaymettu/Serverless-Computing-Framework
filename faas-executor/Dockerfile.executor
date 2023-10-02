@@ -1,0 +1,9 @@
+FROM golang:1.17
+
+WORKDIR /app
+
+COPY faas-executor.go .
+
+RUN go build -o faas-executor faas-executor.go
+
+CMD [ "./faas-executor" ]

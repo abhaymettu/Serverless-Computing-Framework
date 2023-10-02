@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: faas-controller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: faas-controller
+  template:
+    metadata:
+      labels:
+        app: faas-controller
+    spec:
+      containers:
+      - name: faas-controller
+        image: <YOUR_IMAGE_REPO>/faas-controller:latest

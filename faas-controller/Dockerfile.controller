@@ -1,0 +1,9 @@
+FROM golang:1.17
+
+WORKDIR /app
+
+COPY faas-controller.go .
+
+RUN go build -o faas-controller faas-controller.go
+
+CMD [ "./faas-controller" ]

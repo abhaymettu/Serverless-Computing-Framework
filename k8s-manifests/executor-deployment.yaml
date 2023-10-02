@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: faas-executor
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: faas-executor
+  template:
+    metadata:
+      labels:
+        app: faas-executor
+    spec:
+      containers:
+      - name: faas-executor
+        image: <YOUR_IMAGE_REPO>/faas-executor:latest
