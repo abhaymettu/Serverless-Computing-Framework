@@ -4,14 +4,14 @@ A serverless computing platform inspired by AWS Lambda. This project offers a fu
 
 ## Prerequisites
 
-- Kubernetes cluster (e.g., Google Kubernetes Engine, AWS EKS, minikube)
+- Kubernetes cluster
 - Docker
 - Helm (for RabbitMQ deployment)
 - Go 1.17 or newer
 
 ## Setup
 
-1. **Kubernetes Cluster**: Set up a Kubernetes cluster if you haven't already.
+1. **Kubernetes Cluster**: Set up a Kubernetes cluster
 2. **RabbitMQ**: Deploy RabbitMQ on your cluster using its Helm chart:
     ```bash
     helm repo add bitnami https://charts.bitnami.com/bitnami
