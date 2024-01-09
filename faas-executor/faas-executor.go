@@ -11,11 +11,10 @@ func executeFunction(ch *amqp.Channel, msg amqp.Delivery) {
 	log.Printf("Function details extracted: %s", functionDetails)
 
 	// Simulate using Docker SDK to run the function inside a container
-	// In a real-world scenario, you would use the Docker SDK here
 	log.Printf("Executing function: %s", functionDetails)
-	result := "Result of function execution" // This is a placeholder
+	result := "Result of function execution" // placeholder
 
-	// Send back the results to another RabbitMQ queue
+	// Send back the results to another queue
 	err := ch.Publish(
 		"",                   // exchange
 		"faas-response-queue",// routing key
@@ -56,7 +55,6 @@ func main() {
 		log.Fatalf("Failed to declare the faas-queue: %v", err)
 	}
 
-	// Declare the response queue to ensure it exists
 	_, err = ch.QueueDeclare(
 		"faas-response-queue",
 		false,
